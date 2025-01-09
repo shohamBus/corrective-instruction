@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@sdk': path.resolve(__dirname, 'src/sdk'),
+      'sdk': path.resolve(__dirname, 'src/sdk'),
     },
   },
 });

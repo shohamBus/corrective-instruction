@@ -1,0 +1,51 @@
+.login-root {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+  }
+  
+  .login-paper {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .login-form {
+    width: 100%; 
+    margin-top: 8px;
+  }
+  
+  .login-submit {
+    margin: 24px 0 16px;
+  }
+
+  .register-root {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+  }
+  
+  .register-paper {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .register-form {
+    width: 100%; 
+    margin-top: 8px;
+  }
+  
+  .register-submit {
+    margin: 24px 0 16px;
+  }

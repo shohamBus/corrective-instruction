@@ -1,7 +1,8 @@
 import React from 'react';
-import { Button, Grid, Grid2, TextField, Typography } from '@mui/material';
+import { Button, Grid, Paper, TextField, Typography } from '@mui/material';
 import { addNewUser } from '../../sdk/firebaseAcctions';
 import { LoginProps } from './types';
+import './style.scss'
 
 const Register: React.FC<LoginProps> = (props) => {
   const { userName, password, email, dispatch, setIsLoginPage } = props;
@@ -17,45 +18,67 @@ const Register: React.FC<LoginProps> = (props) => {
   }
 
   return (
-    <Grid2 container alignItems="center" justifyContent="center" display={'flex'} spacing={2} direction={'column'}>
-      <Grid item xs={8}>
-        <TextField
-          helperText="Please enter your user name"
-          id="Username"
-          type='username'
-          label="Username"
-          onChange={(e) => dispatch({ type: 'SET_USERNAME', payload: e.target.value })}
-        />
-      </Grid>
-      <Grid item xs={8}>
-        <TextField
-          helperText="Please enter your Password"
-          id="Password"
-          type='password'
-          label="Password"
-          onChange={(e) => dispatch({ type: 'SET_PASSWORD', payload: e.target.value })}
-        />
-      </Grid>
-     
-        <Grid item xs={8}>
+    <div className="register-root">
+      <Paper className="register-paper" elevation={3}>
+        <Typography component="h1" variant="h5">
+          Register
+        </Typography>
+        <form className="register-form" onSubmit={handleRegister}>
           <TextField
-            helperText="Please enter your Email"
-            id="Email"
-            type='email'
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="username"
+            label="Username"
+            name="username"
+            autoComplete="username"
+            autoFocus
+            onChange={(e) => dispatch({ type: 'SET_USERNAME', payload: e.target.value })}
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+            onChange={(e) => dispatch({ type: 'SET_PASSWORD', payload: e.target.value })}
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="email"
             label="Email"
+            name="email"
+            autoComplete="email"
             onChange={(e) => dispatch({ type: 'SET_EMAIL', payload: e.target.value })}
           />
-        </Grid>
-      <Grid item xs={8}>
-          <Button variant="contained" onClick={handleRegister}>
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className="register-submit"
+          >
             Register
           </Button>
-          <Grid item xs={10} display={'flex'} alignItems={'center'} justifyContent={'center'}>
-            <Typography variant="button" color="primary" align="center">if you have an account, please</Typography>
-            <Button variant='outlined' color="primary" onClick={() => setIsLoginPage(true)}>Login</Button>
-          </Grid>
-      </Grid>
-    </Grid2>
+        </form>
+        <Grid item xs={10} display={'flex'} alignItems={'center'} justifyContent={'center'}>
+           <Typography variant="body2" color="textSecondary" align="center">
+           if you have an account, please
+                    <Button color="primary" onClick={() => setIsLoginPage(false)}>
+                    Login
+                    </Button>
+                  </Typography>
+        </Grid>
+      </Paper>
+    </div>
   );
 };
 
