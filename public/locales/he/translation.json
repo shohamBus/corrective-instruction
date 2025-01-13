@@ -1,0 +1,12 @@
+{
+    "loginPage": {
+      "login": "התחברות",
+      "loginWithGoogle": "התחברות עם גוגל",
+      "register": "הרשמה",
+      "userName": "שם משתמש",
+      "password": "סיסמא",
+      "email": "דואר אלקטרוני",
+      "youDontHaveAUserYet":"? אין לך משתמש עדיין",
+      "ifYouHaveAnAccount":"? יש לך כבר משתמש"
+    }
+  }

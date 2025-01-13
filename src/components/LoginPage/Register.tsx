@@ -3,10 +3,11 @@ import { Button, Grid, Paper, TextField, Typography } from '@mui/material';
 import { addNewUser } from '../../sdk/firebaseAcctions';
 import { LoginProps } from './types';
 import './style.scss'
+import { useTranslation } from 'react-i18next';
 
 const Register: React.FC<LoginProps> = (props) => {
   const { userName, password, email, dispatch, setIsLoginPage } = props;
-  
+  const { t } = useTranslation();
   const handleRegister = async (e: React.FormEvent) => {
     const dataForRegister = { userName, password, email }
     e.preventDefault();
@@ -21,7 +22,7 @@ const Register: React.FC<LoginProps> = (props) => {
     <div className="register-root">
       <Paper className="register-paper" elevation={3}>
         <Typography component="h1" variant="h5">
-          Register
+        {t('loginPage.register')}
         </Typography>
         <form className="register-form" onSubmit={handleRegister}>
           <TextField
@@ -30,11 +31,12 @@ const Register: React.FC<LoginProps> = (props) => {
             required
             fullWidth
             id="username"
-            label="Username"
+            label={t('loginPage.userName')}
             name="username"
             autoComplete="username"
             autoFocus
             onChange={(e) => dispatch({ type: 'SET_USERNAME', payload: e.target.value })}
+            dir='rtl'
           />
           <TextField
             variant="outlined"
@@ -42,11 +44,12 @@ const Register: React.FC<LoginProps> = (props) => {
             required
             fullWidth
             name="password"
-            label="Password"
+            label={t('loginPage.password')}
             type="password"
             id="password"
             autoComplete="current-password"
             onChange={(e) => dispatch({ type: 'SET_PASSWORD', payload: e.target.value })}
+             dir='rtl'
           />
           <TextField
             variant="outlined"
@@ -54,10 +57,11 @@ const Register: React.FC<LoginProps> = (props) => {
             required
             fullWidth
             id="email"
-            label="Email"
+            label={t('loginPage.email')}
             name="email"
             autoComplete="email"
             onChange={(e) => dispatch({ type: 'SET_EMAIL', payload: e.target.value })}
+             dir='rtl'
           />
           <Button
             type="submit"
@@ -66,15 +70,15 @@ const Register: React.FC<LoginProps> = (props) => {
             color="primary"
             className="register-submit"
           >
-            Register
+          {t('loginPage.register')}
           </Button>
         </form>
         <Grid item xs={10} display={'flex'} alignItems={'center'} justifyContent={'center'}>
-           <Typography variant="body2" color="textSecondary" align="center">
-           if you have an account, please
-                    <Button color="primary" onClick={() => setIsLoginPage(false)}>
-                    Login
+                    <Button color="primary" onClick={() => setIsLoginPage(true)}>
+                    {t('loginPage.login')}
                     </Button>
+           <Typography variant="body2" color="textSecondary" align="center">
+           {t('loginPage.ifYouHaveAnAccount')}
                   </Typography>
         </Grid>
       </Paper>
