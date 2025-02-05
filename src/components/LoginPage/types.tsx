@@ -1,18 +1,14 @@
 import { Dispatch, SetStateAction } from "react";
 
 export type Action =
-  | { type: 'SET_USERNAME'; payload: string }
-  | { type: 'SET_PASSWORD'; payload: string }
-  | { type: 'SET_EMAIL'; payload: string }
-  | { type: 'SET_ERROR'; payload: boolean };
+  | { type: "SET_FIRST_NAME"; payload: string }
+  | { type: "SET_LAST_NAME"; payload: string }
+  | { type: "SET_PASSWORD"; payload: string }
+  | { type: "SET_ID"; payload: string };
 
 export interface LoginProps {
-  userName: string;
-  password: string;
-  email: string;
+  name: string;
+  id: string;
   dispatch: Dispatch<Action>;
-  setIsLoginPage: Dispatch<SetStateAction<boolean>>;
+  setIsLoginPage?: Dispatch<SetStateAction<boolean>>;
 }
-
-
-

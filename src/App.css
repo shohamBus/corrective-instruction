@@ -49,3 +49,15 @@
 .read-the-docs {
   color: #888;
 }
+
+.nav-link {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #007bff;
+  font-size: 16px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}

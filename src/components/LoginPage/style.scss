@@ -1,51 +1,57 @@
-.login-root {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f5f5f5;
-  }
-  
-  .login-paper {
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 400px;
-    width: 100%;
-  }
-  
-  .login-form {
-    width: 100%; 
-    margin-top: 8px;
-  }
-  
-  .login-submit {
-    margin: 24px 0 16px;
-  }
+@mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .register-root {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f5f5f5;
+@mixin form-container {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+@mixin form {
+  width: 100%;
+  margin-top: 8px;
+}
+
+@mixin submit-button {
+  margin: 24px 0 16px;
+}
+
+.login-root, .register-root {
+  height: 100vh;
+  @include center-flex;
+  background-color: #f5f5f5;
+}
+
+.login-paper, .register-paper {
+  @include form-container;
+}
+
+.login-form, .register-form {
+  @include form;
+}
+
+.login-submit, .register-submit {
+  @include submit-button;
+}
+
+.input-login {
+  width: 300px;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+
+  &:focus {
+    border-color: #3f51b5;
+    outline: none;
+    box-shadow: 0 0 5px rgba(63, 81, 181, 0.5);
   }
-  
-  .register-paper {
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 400px;
-    width: 100%;
-  }
-  
-  .register-form {
-    width: 100%; 
-    margin-top: 8px;
-  }
-  
-  .register-submit {
-    margin: 24px 0 16px;
-  }
+}

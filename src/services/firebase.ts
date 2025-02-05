@@ -9,13 +9,13 @@ import { getFirestore } from "firebase/firestore";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBx-wUQ_DXbLhUY8QbqBjSVF3oSNSit0uk",
-  authDomain: "lets-fly-4f81b.firebaseapp.com",
-  projectId: "lets-fly-4f81b",
-  storageBucket: "lets-fly-4f81b.firebasestorage.app",
-  messagingSenderId: "139821416824",
-  appId: "1:139821416824:web:9c7573b465dae0bf61488d",
-  measurementId: "G-BK3CS2XJ98"
+  apiKey: "AIzaSyC5qkSe8BcHJkNwwLl2UchGEisroLnVchE",
+  authDomain: "corrective-instruction.firebaseapp.com",
+  projectId: "corrective-instruction",
+  storageBucket: "corrective-instruction.firebasestorage.app",
+  messagingSenderId: "238048212147",
+  appId: "1:238048212147:web:61b7a55f860d56d2a16cc6",
+  measurementId: "G-YRPFV14K11"
 };
 
 // Initialize Firebase
